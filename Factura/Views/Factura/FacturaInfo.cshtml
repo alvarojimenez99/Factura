@@ -1,0 +1,48 @@
+﻿
+@model Factura.Models.FacturaDatos
+@{
+    ViewBag.Title = "Datos de Factura";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FacturaInfo</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Datos de Factura</h3>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Fecha</th>
+                <th>Monto</th>
+                <th>Impuesto</th>
+            </tr>
+
+            <tr>
+                <td>@Model.FacturaId</td>
+                <td>@Model.Fecha</td>
+                <td>@Model.Monto</td>
+                <td>@Model.Impuesto</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿@model Factura.Models.empresas
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-2 text-gray-800">Empresas</h1>
+    </div>
+
+    <!-- Page Heading -->
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Listado de Empresas</h6>
+            <a href="~/Empresa/New/" class="btn btn-primary btn-icon-split" style="float:right" >
+                <span class="text">Nueva Empresa</span>
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Empresa</th>
+                            <th>RUC</th>
+                            <th>Web</th>
+                            <th>Contacto</th>
+                            <th>Telefono</th>
+                            <th>Registro</th>
+                            <th style="text-align:center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Empresa</th>
+                            <th>RUC</th>
+                            <th>Web</th>
+                            <th>Contacto</th>
+                            <th>Telefono</th>
+                            <th>Registro</th>
+                            <th style="text-align:center">Acciones</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var empresa in ViewBag.Data)
+                        {
+                        <tr>
+                            <td>@empresa.name</td>
+                            <td>@empresa.ruc</td>
+                            <td>@empresa.website</td>
+                            <td>@empresa.contact</td>
+                            <td>@empresa.phone</td>
+                            <td>@empresa.created_at</td>
+                            <td style="text-align:center">
+                                
+                                    
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Acciones
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="~/Empresa/Crud/@empresa.id">Editar</a>
+                                                <a class="dropdown-item" href="~/Empresa/Desactivar/@empresa.id">Desactivar</a>
+                                                
+                                            </div>
+                                    
+                                
+                                
+                            </td>
+                        </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Content Row -->
+<!-- /.container-fluid -->

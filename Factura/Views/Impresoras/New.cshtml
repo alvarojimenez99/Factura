@@ -1,0 +1,43 @@
+﻿@model Factura.Models.impresoras
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-2 text-gray-800">Impresoras</h1>
+    </div>
+
+    <!-- Page Heading -->
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Datos de Impresora</h6>
+        </div>
+        @using (Html.BeginForm("Registrar", "Impresoras", FormMethod.Post, new { @class = "user" }))
+        {
+            <div class="form-group">
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control form-control-user", placeholder = "Nombre" } })
+            </div>
+            <div class="form-group">
+                @Html.DropDownList("puerto", (IEnumerable<SelectListItem>)ViewBag.Opciones, "Selecciones Puerto", new { @class = "form-control"} )
+
+            </div>
+
+
+            <button class="btn btn-primary btn-user btn-block" value="Actualizar" type="submit">Actualizar Datos</button>
+
+            <hr>
+
+        }
+    </div>
+
+</div>
+<!-- Content Row -->
+<!-- /.container-fluid -->
+<!-- End of Main Content -->
+<!-- Footer -->

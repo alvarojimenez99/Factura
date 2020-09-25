@@ -1,0 +1,261 @@
+
+		private void mnuAbrirComprobante_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_AbreComprobanteDeVenta("123.456.789-10","Fulano");					
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuAnulaComprobante_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_AnulaCupon();					
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void Form1_Load(object sender, System.EventArgs e)
+		{
+			//Console.WriteLine("SystemDirectory: {0}", Environment.SystemDirectory);
+			IRetorno = BemaFI64.Bematech_FI_AbrePuertaSerial();
+			BemaFI64.Analisa_iRetorno(IRetorno);
+		    BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuSalir_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_CierraPuertaSerial();
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			this.Close();
+		}
+
+		private void mnuVenderArticulo_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_VendeArticulo("123","Pantalon","FF","I","2",2,"350,00","%","0100");
+            BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuEmpezaCierre_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_IniciaCierreCupon("A","%","0000");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuFormadePago_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_EfectuaFormaPago("Efectivo","5000,00");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuFinalizaCierre_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_CierraCupon("Tarjeta","A","%","0000","5000,00","Vuelva Siempre!");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuAbrirComprobanteExtendido_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_AbreComprobanteDeVentaEx("123.456.789-10","Fulano","Calle sin Fin");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuDevolucionArticulo_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_DevolucionArticulo("123","Boligrafo","FF","I","15",3,"50,00","%","0000");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuAbreNotaCredito_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_AbreNotaDeCredito("Fulano","123456789101112","123.456.789-10","01","01","06","09","37","56","123456","Gracias, Vuelva Siempre");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuAnulaArticulo_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_AnulaArticuloAnterior();
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuAutenticacion_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_Autenticacion();
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuAbrirInforme_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_InformeGerencial("Escriba su texto aqui");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuCerrarInforme_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_CierraInformeGerencial();
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuAbrirComprobanteNoFiscalVinculado_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_AbreComprobanteNoFiscalVinculado("Tarjeta","","");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuUtilizarComprobanteNoFiscalVinculado_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_ImprimeComprobanteNoFiscalVinculado("Escriba su texto aquí");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuCerrarComprobanteNoFiscalVinculado_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_CierraComprobanteNoFiscalVinculado();
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuSangria_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_Sangria("5000,00");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuProvision_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_Provision("3000,00","Efectivo");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuLecturaX_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_LecturaX();
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuLecturaXSerial_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_LecturaXSerial();
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuReduccionZ_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_ReduccionZ("","");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuProgramaAlicuota_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_ProgramaAlicuota("0500",0);
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuProgramaRedondeo_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_ProgramaRedondeo();
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuProgramaCaracter_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_ProgramaCaracterAutenticacion("001,002,004,008,016,032,064,128,064,032,016,008,004,002,129,129,129,129");
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuProgramaTruncamiento_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_ProgramaTruncamiento();
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuIncrementos_Click(object sender, System.EventArgs e)
+		{
+			string Incrementos = new string('\x20',14);
+			IRetorno = BemaFI64.Bematech_FI_Agregado(ref Incrementos);
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+			MessageBox.Show("Total de Incrementos\n" + Incrementos,"Bematech",MessageBoxButtons.OK);
+		}
+
+		private void mnuAlicuotasRegistradas_Click(object sender, System.EventArgs e)
+		{
+			string Alicuotas = new string('\x20',79);
+			IRetorno = BemaFI64.Bematech_FI_RetornoAlicuotas(ref Alicuotas);
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+			MessageBox.Show("Alicuotas Programadas : " + Alicuotas,"Bematech",MessageBoxButtons.OK);
+		}
+
+		private void mnuAnulaciones_Click(object sender, System.EventArgs e)
+		{
+			string NumCupones = new string('\x20',4);
+			IRetorno = BemaFI64.Bematech_FI_NumeroCuponesAnulados(ref NumCupones);
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+			MessageBox.Show("Numero de cupones anulados: " + NumCupones,"Bematech",MessageBoxButtons.OK);
+		
+		}
+
+		private void mnuDatosUltimaReduccion_Click(object sender, System.EventArgs e)
+		{
+			string Datos = new string('\x20',613);
+			IRetorno = BemaFI64.Bematech_FI_DatosUltimaReduccion(ref Datos);
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+			MessageBox.Show("Datos de la Última Reducción Z: \n\n" + Datos,"Bematech",MessageBoxButtons.OK);
+		
+		}
+
+		private void mnuDescuentos_Click(object sender, System.EventArgs e)
+		{
+			string ValorDescuentos = new string('\x20',14);
+			IRetorno = BemaFI64.Bematech_FI_Descuentos(ref ValorDescuentos);
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+			MessageBox.Show("Valor de los Descuentos : " + ValorDescuentos,"Bematech",MessageBoxButtons.OK);
+		
+		}
+
+		private void mnuAbrirGaveta_Click(object sender, System.EventArgs e)
+		{
+			IRetorno = BemaFI64.Bematech_FI_AccionaGaveta();			
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+		}
+
+		private void mnuStatusGaveta_Click(object sender, System.EventArgs e)
+		{
+			int EstadoGaveta;
+			IRetorno = BemaFI64.Bematech_FI_VerificaEstadoGaveta(out EstadoGaveta);
+			BemaFI64.Analisa_iRetorno(IRetorno);
+			BemaFI64.Analisa_RetornoImpresora();
+			if (EstadoGaveta == 1)
+			{
+				MessageBox.Show("Gaveta abierta","Bematech",MessageBoxButtons.OK);
+			}
+			else
+				MessageBox.Show("Gaveta cerrada","Bematech",MessageBoxButtons.OK);
+			}
+	}
+}

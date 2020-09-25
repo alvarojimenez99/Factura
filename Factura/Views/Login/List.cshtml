@@ -1,0 +1,75 @@
+﻿@model Factura.Models.users
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-2 text-gray-800">Usuarios</h1>
+    </div>
+
+    <!-- Page Heading -->
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Listado de Usuarios</h6>
+            <a href="~/Login/New/" class="btn btn-primary btn-icon-split" style="float:right">
+                <span class="text">Nuevo Usuario</span>
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Nombre</th>
+                            <th>Registro</th>
+                            <th style="text-align:center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Email</th>
+                            <th>Nombre</th>
+                            <th>Registro</th>
+                            <th style="text-align:center">Acciones</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var usuario in ViewBag.Data)
+                        {
+                            <tr>
+                                <td>@usuario.email</td>
+                                <td>@usuario.nombres</td>
+                                <td>@usuario.created_at</td>
+                                <td style="text-align:center">
+
+
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Acciones
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="~/Login/Crud/@usuario.id">Editar</a>
+                                        <a class="dropdown-item" href="~/Login/Desactivar/@usuario.id">Desactivar</a>
+
+                                    </div>
+
+
+
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Content Row -->
+<!-- /.container-fluid -->
